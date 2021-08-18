@@ -1,2 +1,3 @@
-# head-total-full
-Es un generador de Web App Manifest y de las etiquetas en head. Fácil, rápido, completo, personalizado. 
+# Web App Manifest Generator
+
+https://tomitm.github.io/appmanifest/

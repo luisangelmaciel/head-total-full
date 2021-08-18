@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Agregar-nuevo-producto</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/png" sizes="512x512" href="res/icon_hi_res_512.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="res/icon_hi_res_512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="res/icon_hi_res_512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="res/icon_xxxhdpi_192.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="res/icon_xxxhdpi_192.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="res/icon_xxhdpi_144.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="res/icon_xxhdpi_144.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="res/icon_xhdpi_96.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="res/icon_xhdpi_96.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="res/icon_hdpi_72.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="res/icon_hdpi_72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="res/icon_mdpi_48.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="48x48" href="res/icon_mdpi_48.png">
+    <meta name="application-name" content="Manifest Generator">
+    <meta name="apple-mobile-web-app-title" content="Manifest Generator">
+    <meta name="theme-color" content="#0275d8">
+    <meta name="msapplication-navbutton-color" content="#0275d8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/appmanifest/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@_tomitm">
+    <meta name="twitter:title" content="Web App Manifest Generator">
+    <meta name="twitter:description" content="Web App Manifests are one of the key pieces to making your web app look and feel like a native app.">
+    <meta name="twitter:image" content="https://tomitm.github.io/appmanifest/res/icon_hi_res_512.png">
+    <meta name="google-site-verification" content="p" />
+
+    <link rel="canonical" href="https://tomitm.github.io/appmanifest/" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.0.0-alpha.2/dist/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+    <style media="screen">
+        /*!
+ * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+        /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+        
+        html {
+            font-family: sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%
+        }
+        
+        body {
+            margin: 0
+        }
+        
+        footer,
+        main,
+        nav,
+        section {
+            display: block
+        }
+        
+        a {
+            background-color: transparent
+        }
+        
+        a:active {
+            outline: 0
+        }
+        
+        a:hover {
+            outline: 0
+        }
+        
+        b,
+        strong {
+            font-weight: 700
+        }
+        
+        h1 {
+            margin: .67em 0;
+            font-size: 2em
+        }
+        
+        small {
+            font-size: 80%
+        }
+        
+        img {
+            border: 0
+        }
+        
+        pre {
+            overflow: auto
+        }
+        
+        code,
+        pre {
+            font-family: monospace, monospace;
+            font-size: 1em
+        }
+        
+        input,
+        select {
+            margin: 0;
+            font: inherit;
+            color: inherit
+        }
+        
+        select {
+            text-transform: none
+        }
+        
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+        
+        input {
+            line-height: normal
+        }
+        
+        input[type=checkbox],
+        input[type=radio] {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0
+        }
+        
+        table {
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+        
+        td,
+        th {
+            padding: 0
+        }
+        
+        @media print {
+            *,
+             ::after,
+             ::before {
+                text-shadow: none!important;
+                -webkit-box-shadow: none!important;
+                box-shadow: none!important
+            }
+            a,
+            a:visited {
+                text-decoration: underline
+            }
+            pre {
+                border: 1px solid #999;
+                page-break-inside: avoid
+            }
+            thead {
+                display: table-header-group
+            }
+            img,
+            tr {
+                page-break-inside: avoid
+            }
+            img {
+                max-width: 100%!important
+            }
+            p {
+                orphans: 3;
+                widows: 3
+            }
+            .table {
+                border-collapse: collapse!important
+            }
+            .table td,
+            .table th {
+                background-color: #fff!important
+            }
+        }
+        
+        html {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+        
+        *,
+         ::after,
+         ::before {
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit
+        }
+        
+        @-ms-viewport {
+            width: device-width
+        }
+        
+        @viewport {
+            width: device-width
+        }
+        
+        html {
+            font-size: 16px;
+            -webkit-tap-highlight-color: transparent
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #373a3c;
+            background-color: #fff
+        }
+        
+        h1,
+        h5 {
+            margin-top: 0;
+            margin-bottom: .5rem
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+        
+        ul {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+        
+        a {
+            color: #0275d8;
+            text-decoration: none
+        }
+        
+        a:focus,
+        a:hover {
+            color: #014c8c;
+            text-decoration: underline
+        }
+        
+        a:focus {
+            outline: thin dotted;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px
+        }
+        
+        pre {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+        
+        img {
+            vertical-align: middle
+        }
+        
+        a,
+        input,
+        label,
+        select {
+            -ms-touch-action: manipulation;
+            touch-action: manipulation
+        }
+        
+        table {
+            background-color: transparent
+        }
+        
+        th {
+            text-align: left
+        }
+        
+        label {
+            display: inline-block;
+            margin-bottom: .5rem
+        }
+        
+        input,
+        select {
+            margin: 0;
+            line-height: inherit;
+            border-radius: 0
+        }
+        
+        h1,
+        h5 {
+            margin-bottom: .5rem;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.1;
+            color: inherit
+        }
+        
+        h1 {
+            font-size: 2.5rem
+        }
+        
+        h5 {
+            font-size: 1.25rem
+        }
+        
+        small {
+            font-size: 80%;
+            font-weight: 400
+        }
+        
+        code,
+        pre {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace
+        }
+        
+        code {
+            padding: .2rem .4rem;
+            font-size: 90%;
+            color: #bd4147;
+            background-color: #f7f7f9;
+            border-radius: .25rem
+        }
+        
+        pre {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 90%;
+            line-height: 1.5;
+            color: #373a3c
+        }
+        
+        .container {
+            padding-right: .9375rem;
+            padding-left: .9375rem;
+            margin-right: auto;
+            margin-left: auto
+        }
+        
+        .container::after {
+            display: table;
+            clear: both;
+            content: ""
+        }
+        
+        @media (min-width:544px) {
+            .container {
+                max-width: 576px
+            }
+        }
+        
+        @media (min-width:768px) {
+            .container {
+                max-width: 720px
+            }
+        }
+        
+        @media (min-width:992px) {
+            .container {
+                max-width: 940px
+            }
+        }
+        
+        @media (min-width:1200px) {
+            .container {
+                max-width: 1140px
+            }
+        }
+        
+        .row {
+            margin-right: -.9375rem;
+            margin-left: -.9375rem
+        }
+        
+        .row::after {
+            display: table;
+            clear: both;
+            content: ""
+        }
+        
+        .col-md-5,
+        .col-md-7 {
+            position: relative;
+            min-height: 1px;
+            padding-right: .9375rem;
+            padding-left: .9375rem
+        }
+        
+        @media (min-width:768px) {
+            .col-md-5,
+            .col-md-7 {
+                float: left
+            }
+            .col-md-5 {
+                width: 41.666667%
+            }
+            .col-md-7 {
+                width: 58.333333%
+            }
+        }
+        
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem
+        }
+        
+        .table td,
+        .table th {
+            padding: .75rem;
+            line-height: 1.5;
+            vertical-align: top;
+            border-top: 1px solid #eceeef
+        }
+        
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #eceeef
+        }
+        
+        .table-sm td,
+        .table-sm th {
+            padding: .3rem
+        }
+        
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #55595c;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: .25rem
+        }
+        
+        .form-control::-ms-expand {
+            background-color: transparent;
+            border: 0
+        }
+        
+        .form-control:focus {
+            border-color: #66afe9;
+            outline: 0
+        }
+        
+        .form-control::-webkit-input-placeholder {
+            color: #999;
+            opacity: 1
+        }
+        
+        .form-control::-moz-placeholder {
+            color: #999;
+            opacity: 1
+        }
+        
+        .form-control:-ms-input-placeholder {
+            color: #999;
+            opacity: 1
+        }
+        
+        .form-control:disabled {
+            background-color: #eceeef;
+            opacity: 1
+        }
+        
+        .form-control:disabled {
+            cursor: not-allowed
+        }
+        
+        .form-control-sm {
+            padding: .275rem .75rem;
+            font-size: .875rem;
+            line-height: 1.5;
+            border-radius: .2rem
+        }
+        
+        .form-group {
+            margin-bottom: 1rem
+        }
+        
+        .radio {
+            position: relative;
+            display: block;
+            margin-bottom: .75rem
+        }
+        
+        .radio label {
+            padding-left: 1.25rem;
+            margin-bottom: 0;
+            font-weight: 400;
+            cursor: pointer
+        }
+        
+        .radio label input:only-child {
+            position: static
+        }
+        
+        .radio input[type=radio] {
+            position: absolute;
+            margin-top: .25rem;
+            margin-left: -1.25rem
+        }
+        
+        .radio+.radio {
+            margin-top: -.25rem
+        }
+        
+        input[type=checkbox]:disabled,
+        input[type=radio]:disabled {
+            cursor: not-allowed
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: .375rem 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            border-radius: .25rem
+        }
+        
+        .btn:active:focus,
+        .btn:focus {
+            outline: thin dotted;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px
+        }
+        
+        .btn:focus,
+        .btn:hover {
+            text-decoration: none
+        }
+        
+        .btn:active {
+            background-image: none;
+            outline: 0
+        }
+        
+        .btn:disabled {
+            cursor: not-allowed;
+            opacity: .65
+        }
+        
+        .btn-link {
+            font-weight: 400;
+            color: #0275d8;
+            border-radius: 0
+        }
+        
+        .btn-link,
+        .btn-link:active,
+        .btn-link:disabled {
+            background-color: transparent
+        }
+        
+        .btn-link,
+        .btn-link:active,
+        .btn-link:focus {
+            border-color: transparent
+        }
+        
+        .btn-link:hover {
+            border-color: transparent
+        }
+        
+        .btn-link:focus,
+        .btn-link:hover {
+            color: #014c8c;
+            text-decoration: underline;
+            background-color: transparent
+        }
+        
+        .btn-link:disabled:focus,
+        .btn-link:disabled:hover {
+            color: #818a91;
+            text-decoration: none
+        }
+        
+        .btn-sm {
+            padding: .25rem .75rem;
+            font-size: .875rem;
+            line-height: 1.5;
+            border-radius: .2rem
+        }
+        
+        .collapse {
+            display: none
+        }
+        
+        .c-select {
+            display: inline-block;
+            max-width: 100%;
+            -webkit-appearance: none;
+            padding: .375rem 1.75rem .375rem .75rem;
+            padding-right: .75rem\9;
+            color: #55595c;
+            vertical-align: middle;
+            background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right .75rem center;
+            background-image: none\9;
+            -webkit-background-size: 8px 10px;
+            background-size: 8px 10px;
+            border: 1px solid #ccc;
+            -moz-appearance: none
+        }
+        
+        .c-select:focus {
+            border-color: #51a7e8;
+            outline: 0
+        }
+        
+        .c-select::-ms-expand {
+            opacity: 0
+        }
+        
+        .nav {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+        
+        .nav-link {
+            display: inline-block
+        }
+        
+        .nav-link:focus,
+        .nav-link:hover {
+            text-decoration: none
+        }
+        
+        .navbar-brand {
+            float: left;
+            padding-top: .25rem;
+            padding-bottom: .25rem;
+            margin-right: 1rem;
+            font-size: 1.25rem
+        }
+        
+        .navbar-brand:focus,
+        .navbar-brand:hover {
+            text-decoration: none
+        }
+        
+        .navbar-nav .nav-item {
+            float: left
+        }
+        
+        .navbar-nav .nav-link {
+            display: block;
+            padding-top: .425rem;
+            padding-bottom: .425rem
+        }
+        
+        .navbar-nav .nav-item+.nav-item {
+            margin-left: 1rem
+        }
+        
+        .card {
+            position: relative;
+            display: block;
+            margin-bottom: .75rem;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: .25rem
+        }
+        
+        .card-block {
+            padding: 1.25rem
+        }
+        
+        .card-title {
+            margin-bottom: .75rem
+        }
+        
+        .pull-xs-right {
+            float: right!important
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0
+        }
+        
+        .text-muted {
+            color: #818a91
+        }
+        
+        @media (max-width:543px) {
+            .hidden-xs-down {
+                display: none!important
+            }
+        }
+        
+        @media (min-width:544px) {
+            .hidden-sm-up {
+                display: none!important
+            }
+        }
+        /*# sourceMappingURL=bootstrap.min.css.map */
+        
+        body {
+            margin-top: 75px;
+        }
+        
+        .btn-collapse text-muted {
+            padding: 0.15rem 0.75rem;
+            margin-top: -.5rem;
+        }
+        
+        .btn-copy {
+            float: right;
+            color: #ccc;
+            cursor: pointer;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+        }
+        
+        #icons td {
+            border-top: none;
+        }
+        
+        #icons td:nth-child(0n+3),
+        #screenshots td:nth-child(0n+3) {
+            /* type */
+            max-width: 8rem;
+        }
+        
+        #related_applications td:nth-child(0n+1) {
+            /* platform */
+            max-width: 6rem;
+        }
+        
+        .output {
+            background-color: #fbfbfb;
+            color: #999;
+        }
+        
+        #notes ul {
+            padding-left: 1.5rem;
+        }
+        
+        #notes li {
+            margin-bottom: .25em;
+        }
+        
+        #messages {
+            position: fixed;
+            left: 1rem;
+            bottom: 1.5rem;
+            max-width: 90%;
+        }
+        
+        #messages .message {
+            padding: .5rem 1rem;
+            margin-top: .5rem;
+            color: #eceeef;
+            background-color: rgba(55, 58, 60, .9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+            will-change: opacity;
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+        }
+        
+        #messages .message i {
+            margin-right: .5rem;
+        }
+        
+        #messages .message.active {
+            will-change: opacity;
+            opacity: 1;
+            transition: opacity 0.25s ease-in-out;
+        }
+        
+        .footer {
+            border-top: 1px solid silver;
+            padding: 30px 10px;
+            margin-top: 15px;
+            color: #818a91;
+        }
+        
+        .footer a i {
+            color: #000;
+        }
+    </style>
+    <style media="screen">
+        /*!
+ * Bootstrap v5.0.1 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+        
+        body {
+            margin-top: 75px;
+        }
+        
+        .btn-collapse text-muted {
+            padding: 0.15rem 0.75rem;
+            margin-top: -.5rem;
+        }
+        
+        .btn-copy {
+            float: right;
+            color: #ccc;
+            cursor: pointer;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+        }
+        
+        #icons td {
+            border-top: none;
+        }
+        
+        #icons td:nth-child(0n+3),
+        #screenshots td:nth-child(0n+3) {
+            /* type */
+            max-width: 8rem;
+        }
+        
+        #related_applications td:nth-child(0n+1) {
+            /* platform */
+            max-width: 6rem;
+        }
+        
+        .output {
+            background-color: #fbfbfb;
+            color: #999;
+        }
+        
+        #notes ul {
+            padding-left: 1.5rem;
+        }
+        
+        #notes li {
+            margin-bottom: .25em;
+        }
+        
+        #messages {
+            position: fixed;
+            left: 1rem;
+            bottom: 1.5rem;
+            max-width: 90%;
+        }
+        
+        #messages .message {
+            padding: .5rem 1rem;
+            margin-top: .5rem;
+            color: #eceeef;
+            background-color: rgba(55, 58, 60, .9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+            will-change: opacity;
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+        }
+        
+        #messages .message i {
+            margin-right: .5rem;
+        }
+        
+        #messages .message.active {
+            will-change: opacity;
+            opacity: 1;
+            transition: opacity 0.25s ease-in-out;
+        }
+        
+        .footer {
+            border-top: 1px solid silver;
+            padding: 30px 10px;
+            margin-top: 15px;
+            color: #818a91;
+        }
+        
+        .footer a i {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-fixed-top navbar-dark " style="background-color: #017dbb;">
+        <a class="navbar-brand hidden-xs-down">hiHello-Full.Web! Generador head al full</a>
+        <a class="navbar-brand hidden-sm-up">hiHello-Full.Web!</a>
+        <ul class="nav navbar-nav pull-xs-right">
+            <li class="nav-item hidden-xs-down">
+                <a class="nav-link" href="https://www.w3.org/TR/appmanifest/" target="_blank" title="Especificaciones de la W3">App Manifest</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://hihello.monster/luisangelmaciel" target="_blank" title="hiHello.LuisAngel!"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+    <div class="container">
+        <br><br><br><br>
+
+        <div class="row">
+            <div class="col-md-7">
+                <form autocomplete="off">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Web App Manifest Generator" />
+                                <small class="text-muted">Name of your web app</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="short_name">Short Name</label>
+                                <input type="text" class="form-control" name="short_name" id="short_name" placeholder="App Manifest" />
+                                <small class="text-muted">This will be used when there is insufficient space to display the full name, such as the homescreen</small>
+                            </div>
+
+                            <span class="collapse" id="more-name">
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" name="description" id="description" placeholder="A generator to help developers create Web App Manifests" />
+                    <small class="text-muted">The purpose of your web app</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="lang">Language</label>
+                    <input type="text" class="form-control" name="lang" id="lang" placeholder="en" value="en"/>
+                    <small class="text-muted">The primary language for the name, short name and description properties. For example, en or en-CA</small>
+                  </div>
+                </span>
+                            <a class="btn btn-link btn-sm btn-collapse text-muted" data-toggle="collapse" data-target="#more-name">More...</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="form-group">
+                                <label for="start_url">Start URL</label>
+                                <input type="text" class="form-control" name="start_url" id="start_url" placeholder="/" value="/" />
+                                <small class="text-muted">Your homescreen shortcut will load this URL</small>
+                            </div>
+                            <span class="collapse" id="more-url">
+                  <div class="form-group">
+                    <label for="scope">Scope</label>
+                    <input type="text" class="form-control" name="scope" id="scope" placeholder="/" />
+                    <small class="text-muted">The scope of your domain that this manifest applies to</small>
+                  </div>
+                </span>
+                            <a class="btn btn-link btn-sm btn-collapse text-muted" data-toggle="collapse" data-target="#more-url">More...</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="form-group">
+                                <label for="display">Display</label>
+                                <div class="radio"><label>
+                    <input type="radio" name="display" value="standalone" checked />
+                    Standalone
+                    <div class="text-muted">An app-like experience, no browser UI, only system UI</div>
+                  </label></div>
+                                <div class="radio"><label>
+                    <input type="radio" name="display" value="fullscreen" />
+                    Fullscreen
+                    <div class="text-muted">No browser or system UI shown</div>
+                  </label></div>
+                                <div class="radio"><label>
+                    <input type="radio" name="display" value="minimal-ui" />
+                    Minimal UI
+                  </label></div>
+                                <div class="radio"><label>
+                    <input type="radio" name="display" value="browser" />
+                    Browser
+                  </label></div>
+                            </div>
+
+                            <span class="collapse" id="more-display">
+                  <div class="form-group">
+                    <label for="orientation">Orientation</label>
+                    <select class="form-control c-select" name="orientation" id="orientation">
+                      <option value="">Select Orientation</option>
+                      <option value="any">Any</option>
+                      <option value="natural">Natural</option>
+                      <option value="landscape">Landscape</option>
+                      <option value="landscape-primary">Landscape (Primary)</option>
+                      <option value="landscape-secondary">Landscape (Secondary)</option>
+                      <option value="portrait">Portrait</option>
+                      <option value="portrait-primary">Portrait (Primary)</option>
+                      <option value="portrait-secondary">Portrait (Secondary)</option>
+                    </select>
+                  </div>
+                </span>
+                            <a class="btn btn-link btn-sm btn-collapse text-muted" data-toggle="collapse" data-target="#more-display">More...</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Titulo de la página" />
+                                <small class="text-muted">Nombre unico para cada página</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="theme_color">Theme color</label>
+                                <input type="text" class="form-control form-control-color" name="theme_color" id="theme_color" placeholder="#0275d8" />
+                                <small class="text-muted">Color used in the browser and system UI, to help make your app immersive</small>
+                            </div>
+
+                            <label>Icons</label>
+                            <table class="table table-sm" id="icons">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Sizes</th>
+                                        <th>Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label class="sr-only" for="icons_0_src">URL</label>
+                                            <input type="text" class="form-control form-control-sm" id="icons_0_src" name="icons[0][src]" placeholder="homescreen.png" />
+                                        </td>
+                                        <td>
+                                            <label class="sr-only" for="icons_0_sizes">Sizes</label>
+                                            <input type="text" class="form-control form-control-sm" id="icons_0_sizes" name="icons[0][sizes]" placeholder="192x192" />
+                                        </td>
+                                        <td>
+                                            <label class="sr-only" for="icons_0_type">Type</label>
+                                            <input type="text" class="form-control form-control-sm" id="icons_0_type" name="icons[0][type]" placeholder="image/png" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><a class="btn btn-link btn-sm" id="add_icons">Add another...</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <span class="collapse" id="more-theme">
+                  <div class="form-group">
+                    <label for="background_color">Background color</label>
+                    <input type="text" class="form-control form-control-color" name="background_color" id="background_color" placeholder="#fff" />
+                    <small class="text-muted">This is typically your <code>&lt;body&gt;</code> background color, used to set the background color until the stylesheets for your app are loaded.</small>
+                  </div>
+
+                </span>
+                            <a class="btn btn-link btn-sm btn-collapse text-muted" data-toggle="collapse" data-target="#more-theme">More...</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-block">
+                            <label>Related applications</label>
+                            <table class="table table-sm" id="related_applications">
+                                <thead>
+                                    <tr>
+                                        <th>Platform</th>
+                                        <th>App ID</th>
+                                        <th>URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label class="sr-only" for="related_0_platform">Platform</label>
+                                            <input type="text" class="form-control form-control-sm" id="related_0_platform" name="related_applications[0][platform]" placeholder="play" />
+                                        </td>
+                                        <td>
+                                            <label class="sr-only" for="related_0_id">ID</label>
+                                            <input type="text" class="form-control form-control-sm" id="related_0_id" name="related_applications[0][id]" placeholder="com.example.app" />
+                                        </td>
+                                        <td>
+                                            <label class="sr-only" for="related_0_url">URL</label>
+                                            <input type="text" class="form-control form-control-sm" id="related_0_url" name="related_applications[0][url]" placeholder="https://play.google.com/store/apps/details?id=com.example.app1" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><a class="btn btn-link btn-sm" id="add_related_applications">Add another...</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="form-group">
+                                <label>
+                    <input type="checkbox" name="prefer_related_applications" id="prefer_related_applications" />
+                    Prefer related applications
+                    <br />
+                    <small class="text-muted">Whether to show the native app banner before the web app install banner</small>
+                  </label>
+                            </div>
+                            <span class="collapse" id="more-apps">
+                  <label>Screenshots</label>
+                  <table class="table table-sm" id="screenshots">
+                    <thead>
+                      <tr>
+                        <th>URL</th>
+                        <th>Sizes</th>
+                        <th>Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label class="sr-only" for="screenshots_0_src">URL</label>
+                          <input type="text" class="form-control form-control-sm" id="screenshots_0_src"
+                              name="screenshots[0][src]" placeholder="screenshots/in-app.png" />
+                        </td>
+                        <td>
+                          <label class="sr-only" for="screenshots_0_sizes">Sizes</label>
+                          <input type="text" class="form-control form-control-sm" id="screenshots_0_sizes"
+                              name="screenshots[0][sizes]" placeholder="1280x920" />
+                        </td>
+                        <td>
+                          <label class="sr-only" for="screenshots_0_type">Type</label>
+                          <input type="text" class="form-control form-control-sm" id="screenshots_0_type"
+                              name="screenshots[0][type]" placeholder="image/png" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4"><a class="btn btn-link btn-sm" id="add_screenshots">Add another...</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </span>
+                            <a class="btn btn-link btn-sm btn-collapse text-muted" data-toggle="collapse" data-target="#more-apps">More...</a>
+                        </div>
+                    </div>
+
+
+                    <main class="container-publicaciones">
+
+                        <br>
+                        <div style="display: flex; align-items: center;padding: 1rem; margin-top: 1rem!; margin-bottom: 1rem; color: #fff; background-color: #017dbb; box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075); border-radius: .25rem">
+                            <img src="https://hihello.monster/favicon.png" width="48" height="48" style="vertical-align: middle; flex-shrink: 0; border-radius: .25rem;  margin-right: .5rem; ">
+                            <div style="line-height: 1">
+                                <h1 class="h1publi nicknamex " style=" color: #fff; line-height: 1;  margin-bottom: 0; ">Luis Angel Maciel</h1>
+                                <strong style="font-weight: bolder"> <code>&lt;luisangelmaciel>!</code> </strong>
+                            </div>
+                        </div>
+                        <div id="Post" style="padding: 1rem; margin-top: 1rem!; margin-bottom: 1rem!; margin-top: 1rem!; margin-bottom: 1rem; border-radius: .25rem; box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)" id="publicaciones">
+                            <ul style=" padding-left: 2rem;
+                            margin-top: 0;
+                            margin-bottom: 1rem; list-style-type: none;  margin: 0;  padding: 0;">
+                                <li w3-repeat="hiHelloMonster" style="list-style-type: none;  margin: 0;  padding: 0;">
+                                    <div style="display: flex; padding-top: 1rem">
+                                        <img src="https://hihello.monster/favicon.png" width="32" height="32" style="vertical-align: middle; margin-right: .5rem; flex-shrink: 0; border-radius: .25rem; box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)">
+                                        <p style=" margin-top: 0;
+                                        margin-bottom: 1rem; padding-bottom: 1rem;  font-size: .1.25em; margin-bottom: 0; border-bottom: 1px solid #e1e5e9 ; line-height: 1.25; width: 100%;">
+                                            <strong style=" font-weight: bolder; display: block ">Luis Angel Maciel <span style="font-weight: 100;">
+                                                {{fechaDePublicacion}}                   </span>
+                                                <span style="font-weight: 100;">
+                                                    <code>&lt;hiHelloMonster>!</code>    
+                                            </span>
+                                        </strong> <br> {{Post}}<br><br>
+                                            <span>
+                                                <a class="automatic a" rel="nofollow"  href="#" data-href="{{pageid}}" >{{accion}}
+                                            </span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <section>
+                            <style>
+                                .html-code {
+                                    font-family: 'Courier New', Courier, monospace;
+                                    color: blue;
+                                    visibility: visible;
+                                }
+                                
+                                .html-code .div:before {
+                                    color: black;
+                                    content: "<div";
+                                }
+                                
+                                .html-code .class:before {
+                                    color: red;
+                                    content: "class";
+                                }
+                                
+                                .html-code .igual:before {
+                                    color: black;
+                                    content: "=";
+                                }
+                                
+                                .html-code .divx:before {
+                                    color: black;
+                                    content: " > </div> ";
+                                }
+                                
+                                .html-nota {
+                                    font-family: 'Courier New', Courier, monospace;
+                                    visibility: visible;
+                                    color: green;
+                                }
+                                
+                                .html-nota:before {
+                                    content: " <!-- ";
+                                }
+                                
+                                .html-nota .notax:before {
+                                    content: " --> ";
+                                }
+                            </style>
+                            <div class="html-code">
+                                <span class="div"></span>
+                                <span class="class"></span>
+                                <span class="igual"></span>"Maciel Padilla"
+                                <span class="divx"></span>
+                            </div>
+
+                            <div class="html-nota">
+                                Directorio
+                                <span class="notax"></span>
+                            </div>
+                        </section>
+
+
+
+
+
+                        <style>
+                             :root {
+                                --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                                --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                                --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
+                            }
+                            
+                            *,
+                             ::after,
+                             ::before {
+                                box-sizing: border-box
+                            }
+                            
+                            .container-publicaciones {
+                                width: 100%;
+                                padding-right: var(--bs-gutter-x, .75rem);
+                                padding-left: var(--bs-gutter-x, .75rem);
+                                margin-right: auto;
+                                margin-left: auto
+                            }
+                            
+                            @media (min-width:576px) {
+                                .container-publicaciones {
+                                    max-width: 540px
+                                }
+                            }
+                            
+                            @media (min-width:768px) {
+                                .container-publicaciones {
+                                    max-width: 720px
+                                }
+                            }
+                            
+                            @media (min-width:992px) {
+                                .container-publicaciones {
+                                    max-width: 960px
+                                }
+                            }
+                            
+                            @media (min-width:1200px) {
+                                .container-publicaciones {
+                                    max-width: 1140px
+                                }
+                            }
+                            
+                            @media (min-width:1400px) {
+                                .container-publicaciones {
+                                    max-width: 1320px
+                                }
+                            }
+                            
+                            .nicknamex,
+                            h1 .h1publi {
+                                margin-top: 0;
+                                margin-bottom: .5rem;
+                                font-weight: 500;
+                                line-height: 1.2;
+                                font-size: 2rem
+                            }
+                            
+                            h1 .h1publi {
+                                font-size: calc(1.375rem + 1.5vw)
+                            }
+                            
+                            a {
+                                text-decoration: none;
+                                margin-top: 0;
+                                margin-bottom: 1rem;
+                                padding-bottom: 1rem;
+                                font-size: .1.25em;
+                                margin-bottom: 0;
+                                color: grey;
+                                line-height: 1.25;
+                                width: 100%
+                            }
+                            
+                            a:link {
+                                text-decoration: none;
+                                width: 200%
+                            }
+                            
+                            a:visited {
+                                color: black;
+                                text-decoration: none;
+                                width: 200%
+                            }
+                            
+                            a:hover {
+                                color: black;
+                                font-family: arial;
+                                text-decoration: none;
+                                width: 200%
+                            }
+                            
+                            @media (min-width:1200px) {
+                                h1 .h1publi {
+                                    font-size: 3rem
+                                }
+                            }
+                            
+                            .nicknamex {
+                                font-size: 1rem
+                            }
+                        </style>
+
+
+
+
+                        <br>
+
+                        <!-- Inicia  hiHelloMonster -->
+                        <script>
+                            var myObject = {
+                                "hiHelloMonster": [{
+                                    "fechaDePublicacion": "20 de junio 2021",
+                                    "Post": "...",
+                                    "pageid": "luisangel.maciel/hiMartech.project/bitacora/v002",
+                                    "data-href": "bitacora/v002",
+                                    "accion": "hiMartech.project! v002",
+                                }, {
+                                    "fechaDePublicacion": "19 de junio 2021",
+                                    "Post": "Para crear esta primera instancia, utilice w3.js como base para programar. Referente al diseño, el style se integro en cada instruccion, esto opr que w3.js jala con todo su style al proyecto principal. <br><br> La base de datos esta integrada en el mismo archivo que tambien incluye una instrución para personalizar las URL y estas puedan ayudar a generar más rapido un Mapa de sitios y enlaces de información por entrada en el sitio. <br><br>  <b>Quede muy contento con el resultado </b>y la lección de este día fue: guardar una copia de los js y css para no sufrir como sufri.Resulta que la pagina de la w3 no estaba linea!!!!!cuando estaba corriendo la penultima prueba, jalaba todo super bien, le hice un ajuste y zas,   cuando vuelvo actualizar resulta que el.js salia con errores por que no encontraba el servidor. <br><br> Me paso por la cabeza mil cosas, valide la información en una pagina, dos paginas, un navegador, en el celular y hasta  reinicie la computadora. <br>  <br> Pero ya quedo la lección aprendida",
+                                    "pageid": "luisangel.maciel/hiMartech.project/bitacora/v001",
+                                    "data-href": "bitacora/v001",
+                                    "accion": "Ver hiMartech.project! v001",
+                                }]
+                            };
+                            // Base URL 
+                            const baseUrl = "http://hihello.monster"
+                            const link = {
+                                Generator: {
+                                    go: (id) => `${baseUrl}/${id}`
+                                }
+                            };
+
+                            document.querySelectorAll('.automatic').forEach(a => (a.href = link.Generator.go(a.dataset.href)));
+                            //Mostrar post 
+                            w3.displayObject("Post", myObject);
+                            w3.displayObject("Glyphs", myObject);
+                            w3.displayObject("siteMap", myObject);
+                            w3.displayObject("Proyectos", myObject);
+                        </script>
+                        <!-- Termina hiHelloMonster  -->
+
+
+                    </main>
+
+
+
+
+                </form>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card output">
+                    <div class="card-block">
+                        <a class="btn-copy" id="copy_manifest">Copy</a>
+                        <strong>manifest.json</strong>
+                        <pre id="output_manifest"></pre>
+                    </div>
+                </div>
+                <div class="card output">
+                    <div class="card-block">
+                        <a class="btn-copy" id="copy_head">Copy</a>
+                        <strong>&lt;head&gt;</strong>
+                        <pre id="output_head"></pre>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block" id="notes">
+                        <h5 class="card-title">Helpful notes</h5>
+                        <ul>
+                            <li>Browsers will automatically display an install banner for your web app when it meets certain <a href="https://developers.google.com/web/fundamentals/app-install-banners/#what_are_the_criteria" target="_blank">criteria</a></li>
+                            <li>You can append a parameter to your start URL to detect when your app is launched from homescreen, or you can use the <code><a href="https://developers.google.com/web/updates/2015/10/display-mode" target="_blank">display-mode</a></code>                                CSS media query</li>
+                            <li>For games, you can set fullscreen display and landscape orientation</li>
+                            <li>If your app is under a subdirectory (such as this one), make sure you set <code>start_url</code> and <code>scope</code> to that directory, otherwise launching will default to <code>/</code></li>
+                            <li>Not all browsers implement the manifest yet, however the <code>&lt;meta&gt;</code> tags will help bridge that gap</li>
+                            <li>You can even link to your native app as a related app and get the benefit of the install banner</li>
+                            <li>To determine if the install prompt was successful, or defer it, use the <code><a href="https://developers.google.com/web/fundamentals/app-install-banners/#did_a_user_install_the_app">beforeinstallprompt</a></code> event</li>
+                            <li>Make sure to add a <a href="https://www.smashingmagazine.com/2016/02/making-a-service-worker/" target="_blank">Service Worker</a> so that your app can work offline and even send notifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="pull-xs-right">
+                <a href="https://twitter.com/luisangelmaciel" target="_blank" title="@_luisangelmaciel"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+            </div>
+            <small>Built by <a href="https://hihello.monster/luisangelmaciel" target="_blank">luisAngel.maciel<b>!</b></a></small>
+        </footer>
+    </div>
+    <div id="messages"></div>
+    <script src="https://unpkg.com/raven-js@3.7.0/dist/raven.min.js" integrity="sha384-hB9Q3zh2w+gNLjy7/tSH34B0DOgMvD/vfs7u2p09teht4jboC00EtZQLPTzM3f03" crossorigin="anonymous"></script>
+    <script src="agregar-nuevo-producto.js" charset="utf-8"></script>
+</body>
+
+</html>
+
+<!-- Tu vídeo ha sido editado y descargado correctamente.
+Si la descarga no ha funcionado,haz clic aquí.
+Haz más ediciones
+Si te gusta FlexClip Video Compressor, compártelo con tus amigos. -->
