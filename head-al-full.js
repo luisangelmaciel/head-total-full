@@ -367,7 +367,7 @@
 
      var footers = [
          '',
-         ' <i class="fa fa-rocket"></i>',
+         ' <i class="fa fa-rocket">hi</i>',
          ' to make the web great again',
          ' who wants more web apps on his homescreen',
          ' who is tired of seeing browser UI',
